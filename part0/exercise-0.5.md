@@ -1,3 +1,5 @@
+```mermaid
+
 sequenceDiagram
     participant browser
     participant server
@@ -28,3 +30,5 @@ sequenceDiagram
     activate server
     server-->>browser: Course stats link
     deactivate server
+
+```
