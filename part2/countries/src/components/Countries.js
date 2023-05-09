@@ -1,3 +1,4 @@
+import './App.css';
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
@@ -9,7 +10,7 @@ const Weather = ({ weather }) => {
     return (
         <div>
             <div>{weather.main.temp} Celsius</div>
-            <img src={`https://openweathermap.org/img/wn/${weather.weather.icon}@2x.png`} alt=''></img>
+            <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} className='weather' alt=''></img>
             <div>wind {weather.wind.speed} m/s</div>
         </div>
     )
