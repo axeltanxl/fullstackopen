@@ -8,7 +8,14 @@ const totalLikes = (blogs) => {
     return total
 }
 
+const favouriteBlog = (blogs) => {
+    const max = blogs.reduce((prev, current) => (prev.likes > current.likes) ? prev : current)
+
+    return max
+}
+
 module.exports = {
     dummy,
-    totalLikes
+    totalLikes,
+    favouriteBlog
 }
