@@ -29,9 +29,24 @@ const mostBlogs = (blogs) => {
     return author
 }
 
+const mostLikes = (blogs) => {
+    const blogsPerAuthor = _.groupBy(blogs, 'author')
+
+    let maxLikes = null
+    for (prop in blogsPerAuthor) {
+        const likes = blogsPerAuthor[prop].reduce((acc, blog) => acc + blog.likes, 0)
+        if (maxLikes == null || likes > maxLikes.likes) {
+            maxLikes = { "author": prop, likes }
+        }
+    }
+
+    return maxLikes
+}
+
 module.exports = {
     dummy,
     totalLikes,
     favouriteBlog,
-    mostBlogs
+    mostBlogs,
+    mostLikes
 }
